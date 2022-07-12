@@ -1,0 +1,11 @@
+*
+!.gitignore
+!scripts
+!scripts/**/*
+!images
+!images/**/*
+!LICENSE
+!Makefile
+!Readme.md
+!Vagrantfile
+!requirements.txt
