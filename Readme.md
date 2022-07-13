@@ -40,6 +40,10 @@ make requirements
 make setup
 ```
 
+<p align="center">
+  <img alt="script" src="images/k8s-script.png">
+</p>
+
 3. Remover o ambiente
 
 ```bash
