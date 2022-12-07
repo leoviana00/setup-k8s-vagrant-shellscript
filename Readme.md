@@ -25,7 +25,7 @@
 ## Arquitetura
 
 - 1 Master
-- 3 Nodes
+- 2 Nodes
 
 ## 🚀 Execução
 1. Instalação dos pré-requisitos:
