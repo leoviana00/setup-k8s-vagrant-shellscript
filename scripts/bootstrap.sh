@@ -24,23 +24,25 @@ EOF
 sysctl --system >/dev/null 2>&1
 
 echo "[TASK 05] - INSTALAÇÃO DOCKER"
-# curl -fsSL https://get.docker.com | bash >/dev/null 2>&1
-# usermod -aG docker ${USER}
-# chmod 777 /var/run/docker.sock
-# usermod -aG docker vagrant
-apt update -qq >/dev/null 2>&1
-apt-get -qq -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common >/dev/null 2>&1
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - >/dev/null 2>&1
-if [ $? -ne 0 ]; then
-    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - >/dev/null 2>&1
-fi
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" >/dev/null 2>&1
-apt update -qq >/dev/null 2>&1
-apt-get install -y docker-ce docker-ce-cli containerd.io >/dev/null 2>&1
-usermod -aG docker $USER
+curl -fsSL https://get.docker.com | bash >/dev/null 2>&1
+usermod -aG docker ${USER}
 chmod 777 /var/run/docker.sock
-# Add vagrant to docker group
 usermod -aG docker vagrant
+
+# apt update -qq >/dev/null 2>&1
+# apt-get -qq -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common >/dev/null 2>&1
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - >/dev/null 2>&1
+# if [ $? -ne 0 ]; then
+#     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - >/dev/null 2>&1
+# fi
+# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" >/dev/null 2>&1
+# apt update -qq >/dev/null 2>&1
+# apt-get install -y docker-ce docker-ce-cli containerd.io >/dev/null 2>&1
+# usermod -aG docker $USER
+# chmod 777 /var/run/docker.sock
+
+# Add vagrant to docker group
+# usermod -aG docker vagrant
 cat >>/etc/docker/daemon.json<<EOF
 {
   "insecure-registries" : ["192.168.10.30:5000","192.168.10.30:5001"]
@@ -67,7 +69,7 @@ echo "export TERM=xterm" >> /etc/bash.bashrc
 
 echo "[TASK 10] - ALTERAR O ARQUIVO /etc/hosts"
 cat >>/etc/hosts<<EOF
-172.16.16.100   k8s-control.labs.com.br     k8s-control
-172.16.16.101   k8s-node1.labs.com.br       k8s-node1
-172.16.16.102   k8s-node2.labs.com.br       k8s-node2
+172.16.16.100   k8s-control-1.labs.com.br    k8s-control-1
+172.16.16.101   k8s-node-1.labs.com.br       k8s-node-1
+172.16.16.102   k8s-node-2.labs.com.br       k8s-node-2
 EOF
