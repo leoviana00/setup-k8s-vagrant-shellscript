@@ -1,5 +1,5 @@
 # Variables
-IMAGE="bento/ubuntu-22.04"
+IMAGE="bento/ubuntu-20.04"
 NODE=2
 CP=1
 ETCD=0

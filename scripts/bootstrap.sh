@@ -29,20 +29,6 @@ usermod -aG docker ${USER}
 chmod 777 /var/run/docker.sock
 usermod -aG docker vagrant
 
-# apt update -qq >/dev/null 2>&1
-# apt-get -qq -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common >/dev/null 2>&1
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - >/dev/null 2>&1
-# if [ $? -ne 0 ]; then
-#     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - >/dev/null 2>&1
-# fi
-# add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" >/dev/null 2>&1
-# apt update -qq >/dev/null 2>&1
-# apt-get install -y docker-ce docker-ce-cli containerd.io >/dev/null 2>&1
-# usermod -aG docker $USER
-# chmod 777 /var/run/docker.sock
-
-# Add vagrant to docker group
-# usermod -aG docker vagrant
 cat >>/etc/docker/daemon.json<<EOF
 {
   "insecure-registries" : ["192.168.10.30:5000","192.168.10.30:5001"]
