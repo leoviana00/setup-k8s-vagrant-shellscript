@@ -4,6 +4,7 @@
 !scripts/**/*
 !images
 !images/**/*
+!keys
 !LICENSE
 !Makefile
 !Readme.md

@@ -45,7 +45,7 @@ EOF
 sudo sed -i 's/^disabled_plugins \=/\#disabled_plugins \=/g' /etc/containerd/config.toml >/dev/null 2>&1
 sudo systemctl restart containerd >/dev/null 2>&1
 
-echo "[TASK 08 ] - INSTALAÇÃO DO CNI PLUGIN PARA CONTAINERD"
+echo "[TASK 08] - INSTALAÇÃO DO CNI PLUGIN PARA CONTAINERD"
 sudo mkdir -p /opt/cni/bin/ 
 sudo wget https://github.com/containernetworking/plugins/releases/download/v1.1.1/cni-plugins-linux-amd64-v1.1.1.tgz >/dev/null 2>&1
 sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-v1.1.1.tgz >/dev/null 2>&1
