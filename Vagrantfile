@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
     
       master.vm.provider :virtualbox do |v|
         v.name    = "k8s-control-#{i}"
-        v.memory  = 4048
+        v.memory  = 2048
         v.cpus    =  2
       end
       master.vm.provision "shell", path: "scripts/bootstrap_k8s_control.sh"
