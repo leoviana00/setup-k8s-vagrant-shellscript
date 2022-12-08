@@ -6,6 +6,8 @@ export KUBECONFIG=/etc/kubernetes/admin.conf
 
 echo "DOCKER"
 systemctl status docker | grep "Active:"
+echo "CONTAINERD"
+systemctl status containerd | grep "Active:"
 echo "K8S"
 systemctl status kubelet | grep "Active:"
 
